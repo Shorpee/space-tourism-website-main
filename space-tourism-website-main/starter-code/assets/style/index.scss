@@ -1,0 +1,150 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+:root {
+  // colors
+  --clr-dark: hsl(230, 35%, 7%);
+  --clr-light: hsl(231, 77%, 90%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* font-sizes */
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+
+  /* font-families */
+  --ff-serif: "Bellefair", serif;
+  --ff-sans-cond: "Barlow Condensed", sans-serif;
+  --ff-sans-normal: "Barlow", sans-serif;
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+// box-sizing
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// margin reset
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+//remove default list-style
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+//remove link attributes for links without classes
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+//input font inherit
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// setup the body
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+//make image easy to work with
+img,
+picture {
+  display: block;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------- */
+/*Utility Classes      */
+/* ------------------- */
+
+// general classes
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+//color utility
+
+.bg-dark {
+  background-color: var(--clr-dark);
+}
+.bg-accent {
+  background-color: var(--clr-light);
+}
+.bg-white {
+  background-color: var(--clr-white);
+}
+
+.text-dark {
+  color: var(--clr-dark);
+}
+.text-accent {
+  color: var(--clr-light);
+}
+.text-white {
+  color: var(--clr-white);
+}
